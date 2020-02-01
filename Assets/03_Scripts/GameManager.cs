@@ -15,10 +15,10 @@ public class GameManager : MonoBehaviour
     public event Action<int> OnAmountChangeRamp = delegate { };
     public event Action<int> OnAmountChangeBridge = delegate { };
 
-    private int amountAxe;
-    private int amountPick;
-    private int amountRamp;
-    private int amountBridge;
+    public int AmountAxe { get; private set; }
+    public int AmountPick { get; private set; }
+    public int AmountRamp { get; private set; }
+    public int AmountBridge { get; private set; }
 
     private bool isSnapped = false;
 
@@ -30,16 +30,14 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
-        LoadNewLevel();
+        LevelManager.Instance.NewLevelReady += LoadNewLevel;
     }
 
-    public void LoadNewLevel()
+    private void LoadNewLevel()
     {
         setAmountAxe(2);
         setAmountPick(1);
@@ -49,31 +47,31 @@ public class GameManager : MonoBehaviour
 
     private void setAmountAxe(int amount)
     {
-        amountAxe = amount;
+        AmountAxe = amount;
         OnAmountChangeAxe(amount);
     }
     
     private void setAmountPick(int amount)
     {
-        amountPick = amount;
+        AmountPick = amount;
         OnAmountChangePick(amount);
     }
     
     private void setAmountRamp(int amount)
     {
-        amountRamp = amount;
+        AmountRamp = amount;
         OnAmountChangeRamp(amount);
     }
     
     private void setAmountBridge(int amount)
     {
-        amountBridge = amount;
+        AmountBridge = amount;
         OnAmountChangeBridge(amount);
     }
     
     public void OnSelectionAxe()
     {
-        if (amountAxe <= 0) return;
+        if (AmountAxe <= 0) return;
             
         if(selectedTool != null & !isSnapped)
             Destroy(selectedTool);
@@ -84,7 +82,7 @@ public class GameManager : MonoBehaviour
     
     public void OnSelectionPick()
     {
-        if (amountPick <= 0) return;
+        if (AmountPick <= 0) return;
             
         if(selectedTool != null & !isSnapped)
             Destroy(selectedTool);
@@ -95,7 +93,7 @@ public class GameManager : MonoBehaviour
     
     public void OnSelectionRamp()
     {
-        if (amountRamp <= 0) return;
+        if (AmountRamp <= 0) return;
             
         if(selectedTool != null & !isSnapped)
             Destroy(selectedTool);
@@ -106,7 +104,7 @@ public class GameManager : MonoBehaviour
     
     public void OnSelectionBridge()
     {
-        if (amountBridge <= 0) return;
+        if (AmountBridge <= 0) return;
             
         if(selectedTool != null & !isSnapped)
             Destroy(selectedTool);
@@ -117,23 +115,23 @@ public class GameManager : MonoBehaviour
 
     public void UpdateAmountAxe()
     {
-        setAmountAxe(amountAxe-1);
+        setAmountAxe(AmountAxe-1);
     }
     
     public void UpdateAmountPick()
     {
-        setAmountPick(amountPick-1);
+        setAmountPick(AmountPick-1);
     }
     
     public void UpdateAmountRamp()
     {
         isSnapped = true;
-        setAmountRamp(amountRamp-1);
+        setAmountRamp(AmountRamp-1);
     }
     
     public void UpdateAmountBrdige()
     {
         isSnapped = true;
-        setAmountBridge(amountBridge-1);
+        setAmountBridge(AmountBridge-1);
     }
 }

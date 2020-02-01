@@ -27,6 +27,11 @@ public class ToolSelection : MonoBehaviour
         manager.OnAmountChangePick += HandleChangePick;
         manager.OnAmountChangeRamp += HandleChangeRamp;
         manager.OnAmountChangeBridge += HandleChangeBrigde;
+        
+        amoutAxeText.text = manager.AmountAxe.ToString();
+        amoutPickText.text = manager.AmountPick.ToString();
+        amoutRampText.text = manager.AmountRamp.ToString();
+        amoutBridgeText.text = manager.AmountBridge.ToString();
     }
 
     private void HandleChangeAxe(int amount)
@@ -47,6 +52,26 @@ public class ToolSelection : MonoBehaviour
     private void HandleChangeBrigde(int amount)
     {
         amoutBridgeText.text = amount.ToString();
+    }
+    
+    public void OnSelectionAxe()
+    {
+        GameManager.Instance.OnSelectionAxe();
+    }
+    
+    public void OnSelectionPick()
+    {
+        GameManager.Instance.OnSelectionPick();
+    }
+    
+    public void OnSelectionRamp()
+    {
+        GameManager.Instance.OnSelectionRamp();
+    }
+    
+    public void OnSelectionBridge()
+    {
+        GameManager.Instance.OnSelectionBridge();
     }
 
     private void OnDestroy()
