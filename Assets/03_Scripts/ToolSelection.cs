@@ -19,7 +19,7 @@ public class ToolSelection : MonoBehaviour
 
     private GameManager manager;
 
-    private void Awake()
+    private void Start()
     {
         manager = GameManager.Instance;
         

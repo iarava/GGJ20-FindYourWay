@@ -52,5 +52,7 @@ public class Hitter : MonoBehaviour
             GameManager.Instance.UpdateAmountPick();
 
         Destroy(gameObject);
+
+        Cursor.visible = true;
     }
 }

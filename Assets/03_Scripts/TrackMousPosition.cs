@@ -21,9 +21,4 @@ public class TrackMousPosition : MonoBehaviour
         var objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         transform.position = objPosition;
     }
-
-    private void OnDestroy()
-    {
-        Cursor.visible = true;
-    }
 }
