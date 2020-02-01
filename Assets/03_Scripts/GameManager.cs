@@ -37,12 +37,12 @@ public class GameManager : MonoBehaviour
         LevelManager.Instance.NewLevelReady += LoadNewLevel;
     }
 
-    private void LoadNewLevel()
+    private void LoadNewLevel(int axes, int picks, int ramps, int bridges)
     {
-        setAmountAxe(2);
-        setAmountPick(1);
-        setAmountRamp(1);
-        setAmountBridge(1);
+        setAmountAxe(axes);
+        setAmountPick(picks);
+        setAmountRamp(ramps);
+        setAmountBridge(bridges);
     }
 
     private void setAmountAxe(int amount)

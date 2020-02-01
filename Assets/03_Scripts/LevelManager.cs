@@ -8,7 +8,9 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
     
-    public event Action NewLevelReady = delegate { };
+    public event Action<int, int, int, int> NewLevelReady = delegate { };
+
+    public ItemsPerLevel[] ItemsPerLevels;
     
     private void Awake()
     {
@@ -20,7 +22,11 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int level)
     {
-        NewLevelReady();
+        var axes = ItemsPerLevels[level].countAxes; 
+        var picks = ItemsPerLevels[level].countPicks; 
+        var ramps = ItemsPerLevels[level].countRamps; 
+        var bridges = ItemsPerLevels[level].countBridges; 
+        NewLevelReady(axes,picks,ramps,bridges);
         SceneManager.LoadScene(level + 1);
     }
 
