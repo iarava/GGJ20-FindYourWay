@@ -3,8 +3,7 @@
 public class Move : MonoBehaviour
 {
 
-    [SerializeField]
-    private float speed = 3f;
+    [SerializeField] private float speed = 3f;
 
     private bool isMoveLeft;
     private bool isMoveRight;
