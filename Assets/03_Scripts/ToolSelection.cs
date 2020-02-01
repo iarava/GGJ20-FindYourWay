@@ -1,31 +1,59 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ToolSelection : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabAxe;
-    [SerializeField] private GameObject prefabPick;
-    [SerializeField] private GameObject prefabRamp;
-    [SerializeField] private GameObject prefabBridge;
     
-    public void OnSelectionAxe()
+    [SerializeField] private TextMeshProUGUI amoutAxeText;
+    [SerializeField] private TextMeshProUGUI amoutPickText;
+    [SerializeField] private TextMeshProUGUI amoutRampText;
+    [SerializeField] private TextMeshProUGUI amoutBridgeText;
+
+    private int currentAmountAxe;
+    private int currentAmountPick;
+    private int currentAmountRamp;
+    private int currentAmountBridge;
+
+    private GameManager manager;
+
+    private void Awake()
     {
-        Instantiate(prefabAxe);
+        manager = GameManager.Instance;
+        
+        manager.OnAmountChangeAxe += HandleChangeAxe;
+        manager.OnAmountChangePick += HandleChangePick;
+        manager.OnAmountChangeRamp += HandleChangeRamp;
+        manager.OnAmountChangeBridge += HandleChangeBrigde;
+    }
+
+    private void HandleChangeAxe(int amount)
+    {
+        amoutAxeText.text = amount.ToString();
+    }
+
+    private void HandleChangePick(int amount)
+    {
+        amoutPickText.text = amount.ToString();
     }
     
-    public void OnSelectionPick()
+    private void HandleChangeRamp(int amount)
     {
-        Instantiate(prefabPick);
+        amoutRampText.text = amount.ToString();
     }
-    
-    public void OnSelectionRamp()
+
+    private void HandleChangeBrigde(int amount)
     {
-        Instantiate(prefabRamp);
+        amoutBridgeText.text = amount.ToString();
     }
-    
-    public void OnSelectionBridge()
+
+    private void OnDestroy()
     {
-        Instantiate(prefabBridge);
+        manager.OnAmountChangeAxe -= HandleChangeAxe;
+        manager.OnAmountChangePick -= HandleChangePick;
+        manager.OnAmountChangeRamp -= HandleChangeRamp;
+        manager.OnAmountChangeBridge -= HandleChangeBrigde;
     }
 }

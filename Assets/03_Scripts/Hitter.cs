@@ -45,6 +45,11 @@ public class Hitter : MonoBehaviour
     {
         var script = destroyableObject.GetComponentInParent<Destroyable>();
         script.ApplyHit(powerOfHit);
+        
+        if(gameObject.CompareTag("Axe"))
+            GameManager.Instance.UpdateAmountAxe();
+        else
+            GameManager.Instance.UpdateAmountPick();
 
         Destroy(gameObject);
     }
