@@ -6,6 +6,14 @@ public class Setter : MonoBehaviour
     private bool isSnapPossible = false;
     private GameObject snapObject = null;
 
+    private BoxCollider2D collider2D;
+    private TrackMousPosition trackMousePos;
+
+    private void Start()
+    {
+        trackMousePos = gameObject.GetComponent<TrackMousPosition>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Trigger entered");
@@ -43,7 +51,7 @@ public class Setter : MonoBehaviour
     {
         transform.position = snapObject.transform.position;
 
-        gameObject.GetComponent<TrackMousPosition>().enabled = false;
+        trackMousePos.enabled = false;
 
         if(gameObject.CompareTag("Ramp"))
             GameManager.Instance.UpdateAmountRamp();
