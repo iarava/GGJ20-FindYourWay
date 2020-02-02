@@ -45,10 +45,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemsPerLevels:
+  - countAxes: 1
+    countPicks: 0
+    countRamps: 0
+    countBridges: 0
   - countAxes: 2
+    countPicks: 0
+    countRamps: 0
+    countBridges: 0
+  - countAxes: 0
     countPicks: 1
-    countRamps: 1
-    countBridges: 1
+    countRamps: 0
+    countBridges: 0
+  - countAxes: 1
+    countPicks: 1
+    countRamps: 0
+    countBridges: 0
 --- !u!114 &5834003794164373808
 MonoBehaviour:
   m_ObjectHideFlags: 0
