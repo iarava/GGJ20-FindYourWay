@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     public event Action<int, int, int, int> NewLevelReady = delegate { };
 
     public ItemsPerLevel[] ItemsPerLevels;
+
+    private int actualLevel = 0;
     
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int level)
     {
+        actualLevel = level;
         var axes = ItemsPerLevels[level].countAxes; 
         var picks = ItemsPerLevels[level].countPicks; 
         var ramps = ItemsPerLevels[level].countRamps; 
@@ -35,6 +38,10 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(level + 1);
     }
 
+    public void Restart()
+    {
+        LoadLevel(actualLevel);
+    }
     public void QuitGame()
     {
         Application.Quit();
