@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Hitter : MonoBehaviour
 {
@@ -10,8 +9,6 @@ public class Hitter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger entered");
-
         if (IsDestroyable(other))
         {
             overDestroyableObject = true;
@@ -21,8 +18,6 @@ public class Hitter : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Trigger entered");
-
         if (IsDestroyable(other))
             overDestroyableObject = false;
             
