@@ -7,6 +7,7 @@ public class WinLevel : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        LevelManager.Instance.LoadStartMenu();
+        if(other.CompareTag("Player"))
+            LevelManager.Instance.LoadStartMenu();
     }
 }
