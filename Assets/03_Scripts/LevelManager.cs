@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     public void LoadStartMenu()
     {
         SceneManager.LoadScene(0);
+        Cursor.visible = true;
     }
 
     public void LoadLevel(int level)
