@@ -49,6 +49,8 @@ public class Setter : MonoBehaviour
 
     private void SnapObject()
     {
+        AudioManager.Instance.Play(AudioManager.SoundType.BUILD);
+        
         transform.position = snapObject.transform.position;
 
         trackMousePos.enabled = false;

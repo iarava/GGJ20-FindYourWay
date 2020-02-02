@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitsToDestroy: 1
+  soundEffect: 1
 --- !u!1 &7102790902044148923
 GameObject:
   m_ObjectHideFlags: 0

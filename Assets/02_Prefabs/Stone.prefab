@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: hitsToDestroy
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 72015743245206582, guid: 5e3de8fdada536a45aac2b565c6172a4,
+        type: 3}
+      propertyPath: soundEffect
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4749929648480661263, guid: 5e3de8fdada536a45aac2b565c6172a4,
         type: 3}
       propertyPath: m_Name

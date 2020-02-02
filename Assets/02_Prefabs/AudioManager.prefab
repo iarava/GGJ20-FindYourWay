@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8430530548846312903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8430530548846312900}
+  - component: {fileID: 8430530548846312901}
+  - component: {fileID: 8430530548846312902}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8430530548846312900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430530548846312903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8430530548846312901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430530548846312903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f337ec997b231214f80132fb29238b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundName: gameSound
+    soundType: 0
+    volume: 0.3
+    loop: 1
+    mute: 0
+    audioClip: {fileID: 8300000, guid: d157f4d6c217c274ead4bda4fc265cd6, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: hitWood
+    soundType: 1
+    volume: 1
+    loop: 0
+    mute: 0
+    audioClip: {fileID: 8300000, guid: ce0a03ea4225a0c41a2236d7a3fcebb9, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: hitRock
+    soundType: 2
+    volume: 1
+    loop: 0
+    mute: 0
+    audioClip: {fileID: 8300000, guid: 84f6ea8ba10be114daa4507ca13dd851, type: 3}
+    audioSource: {fileID: 0}
+  - soundName: building
+    soundType: 3
+    volume: 1
+    loop: 0
+    mute: 0
+    audioClip: {fileID: 8300000, guid: 2565c1b905f1369478a9b9e912b4d78a, type: 3}
+    audioSource: {fileID: 0}
+--- !u!114 &8430530548846312902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430530548846312903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aea5eb1739110648b21b81cacebcfa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
