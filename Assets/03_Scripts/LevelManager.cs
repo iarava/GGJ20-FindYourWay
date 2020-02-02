@@ -20,6 +20,11 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    public void LoadStartMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void LoadLevel(int level)
     {
         var axes = ItemsPerLevels[level].countAxes; 
